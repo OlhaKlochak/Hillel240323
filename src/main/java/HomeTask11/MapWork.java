@@ -5,12 +5,8 @@ import HomeTask.Animals;
 import java.util.*;
 
 public class MapWork {
-    public static void printInfo(Map<Integer,String>AnimalMap) {
-        for (Map.Entry<Integer,String>l:AnimalMap.entrySet()){
-            System.out.println(l.getValue()+l.getKey());
-        }
 
-    }
+
     public static void main(String[] args) {
         Map<Integer, String> info = new HashMap<>();
         info.put(10, "Tiger");
@@ -18,30 +14,25 @@ public class MapWork {
         info.put(19, "Cat");
         info.put(5, "Rino");
         info.put(1, "Dinosaur");
+        printInfo(info);
 
+    }
 
-
-
-
-
-        Set<Integer> infoNum = new TreeSet<>(info.keySet());
-
-
+    public static void printInfo(Map<Integer, String> AnimalMap) {
+        Set<Integer> infoNum = new TreeSet<>(AnimalMap.keySet());
         for (Integer key : infoNum) {
-
-            for (Map.Entry<Integer, String> l : info.entrySet()) {
+            for (Map.Entry<Integer, String> l : AnimalMap.entrySet()) {
                 if (l.getKey() == key) {
-
-                    System.out.println(l.getKey() + " " + l.getValue());
-                    break;
+                    System.out.println(l.getValue() + l.getKey());
                 }
-              //  printInfo(info);"Помогите пожалуйста)))"
 
             }
-
         }
     }
 }
+
+
+
 
 
 
